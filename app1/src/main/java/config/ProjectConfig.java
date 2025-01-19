@@ -4,9 +4,11 @@ import model.Parrot;
 import model.Pirate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "model")
 public class ProjectConfig {
 
     @Bean
@@ -20,15 +22,6 @@ public class ProjectConfig {
     public Parrot parrot2() {
         Parrot p = new Parrot();
         p.setName("Wilson");
-        return p;
-    }
-
-    @Bean
-    // NOTE: с помощью аннотации @Qualifier явно указывает какой бин из контекста следует внедрить
-    public Pirate person(@Qualifier("parrot2") Parrot parrot) {
-        Pirate p = new Pirate();
-        p.setName("Ella");
-        p.setParrot(parrot);
         return p;
     }
 }

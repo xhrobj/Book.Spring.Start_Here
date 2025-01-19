@@ -1,8 +1,16 @@
 package model;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pirate {
     private String name;
     private Parrot parrot;
+
+    public Pirate(@Qualifier("parrot2") Parrot parrot) {
+        this.parrot = parrot;
+    }
 
     public String getName() {
         return name;
