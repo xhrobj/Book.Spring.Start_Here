@@ -2,10 +2,12 @@ package config;
 
 import model.Parrot;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
+@ComponentScan(basePackages = "model")
 public class ProjectConfig {
 
     @Bean(name = "Koko")
@@ -31,15 +33,5 @@ public class ProjectConfig {
         p.setName("Wilson");
 
         return p;
-    }
-
-    @Bean
-    String hello() {
-        return "Hello";
-    }
-
-    @Bean
-    Integer eleven() {
-        return 11;
     }
 }
