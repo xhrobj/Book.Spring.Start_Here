@@ -6,13 +6,13 @@
 
 ### Глава 1. Spring в реальном мире
 
-[Spring Start Here - Episode 1](https://www.youtube.com/watch?v=EhfUdb6do54)
+[Spring Start Here - Episode 1](https://www.youtube.com/watch?v=EhfUdb6do54&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
 
 ### Глава 2. Контекст Spring: что такое бины
 
-[Spring Start Here - Episode 2](https://www.youtube.com/watch?v=b8ocrkawS38)
+[Spring Start Here - Episode 2](https://www.youtube.com/watch?v=b8ocrkawS38&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
 
-[Spring Start Here - Episode 3](https://www.youtube.com/watch?v=uj9St3Rcehg)
+[Spring Start Here - Episode 3](https://www.youtube.com/watch?v=uj9St3Rcehg&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
 
 Первое, что нужно освоить в Spring - добавление в контекст Spring экземпляров объектов (бинов). Spring "видит" только те объекты, которые были добавлены в контекст.
 
@@ -26,3 +26,34 @@
 - аннотация @Bean: используется внутри класса с аннотацией @Configuration. Это явный способ описать бин и его настройки (ветка: chapter_02)
 - стереотипные аннотации: такие как @Component, @Service, @Repository и другие. Они работают в связке с механикой сканирования компонентов (ветка: chapter_02-1)
 - программным способом через registerBean(): этот метод полезен, когда нужно динамически регистрировать бины, например, в зависимости от условий выполнения. Это ручной способ регистрации бина, который предоставляет максимум гибкости (ветка: chapter_02-2)
+
+### Глава 3. Контекст Spring: создаем новые бины
+
+[Spring Start Here - Episode 4](https://www.youtube.com/watch?v=CB7Tzu6-16M&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
+
+[Spring Start Here - Episode 5](https://www.youtube.com/watch?v=ZoeaLEOjayM&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
+
+При реализации приложения часто приходится ссылаться из одного объекта на другой. Таким образо объект при выполнении своих функций может делегироать некоторые действия. Для реализации этого поведения необходимо установить связи между бинами в контекст Spring.
+
+Есть три способа установки связи между бинами:
+- прямая ссылка на метод с аннотацией @Bean (который создает один бин) из метода, который создает другой бин (ветка: chapter_03-1)
+- определение параметра для метода с аннотацией @Bean (ветка: chapter_03-2)
+- использование аннотации @Autowired (ветка: chapter_03-3):
+    - добавление аннотации @Autowired к полю класса
+    - добавление аннотации @Autowired к конструктору (если конструктор только один, аннотацию можно опустить)
+    - добавление аннотации @Autowired к сеттеру
+
+Всякий раз, когда Spring предоставляет значение или ссылку через атрибут класса, метод или параметр консруктора, это делается посредством DI - технологии, реализующей IoC.
+
+DI (Dependency Injection) - паттерн проектирования, который используется для реализации принципа инверсии зависимостей в DIP.
+
+DI - паттерн проектирования, позволяющий объектам получать свои зависимости из внешних источников вместо того, чтобы создавать их самостоятельно.
+
+### Глава 4. Контекст Spring: использование абстракций
+
+[Spring Start Here - Episode 4](https://www.youtube.com/watch?v=YinPemPVTFQ&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
+
+[Spring Start Here - Episode 5](https://www.youtube.com/watch?v=PDVBkuwBwwk&list=PLEocw3gLFc8W25hvuYb6EERd3F0aZjUQF)
+
+
+
