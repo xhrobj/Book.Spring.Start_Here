@@ -18,7 +18,8 @@ public class Main {
         context.registerBean(
                 "parrot1", // имя бина - можно опустить
                 Parrot.class, // тип бина
-                parrotSuplier // supplier, возвращающий экземпляр объекта, который добавляется в контекст
+                parrotSuplier, // supplier, возвращающий экземпляр объекта, который добавляется в контекст
+                bc -> bc.setPrimary(true) // указание сделать бин первичным
         );
 
         var p = context.getBean(Parrot.class);
