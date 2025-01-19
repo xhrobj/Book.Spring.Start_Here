@@ -10,7 +10,8 @@ public class Pirate {
 
     // NOTE: наиболее распространенный способ
     // позволяет объявлять поля как final
-    @Autowired
+    // NOTE: начиная с версии Spring 4.3, если класс состоит только из одного конструктора, аннотацию @Autowired можно пропустить
+//    @Autowired
     public Pirate(Parrot parrot) {
         this.parrot = parrot;
     }
