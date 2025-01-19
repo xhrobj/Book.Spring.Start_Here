@@ -5,6 +5,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Parrot {
     private String name = "Koko";
+    private Pirate owner;
+
+    public Parrot(Pirate owner) {
+        this.owner = owner;
+    }
 
     public String getName() {
         return name;

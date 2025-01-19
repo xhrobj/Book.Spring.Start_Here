@@ -8,6 +8,10 @@ public class Pirate {
     private String name = "Ella";
     private Parrot parrot;
 
+    public Pirate(Parrot parrot) {
+        this.parrot = parrot;
+    }
+
     public String getName() {
         return name;
     }
@@ -20,9 +24,6 @@ public class Pirate {
         this.name = name;
     }
 
-    // Очень редко используемый способ
-    // NOTE: какая-то магия! Сеттер явно нигде не вызывается, но свойство устанавливается
-    @Autowired
     public void setParrot(Parrot parrot) {
         this.parrot = parrot;
     }
