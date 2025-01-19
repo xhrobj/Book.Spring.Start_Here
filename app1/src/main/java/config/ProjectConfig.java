@@ -1,27 +1,10 @@
 package config;
 
-import model.Parrot;
-import model.Pirate;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "model")
 public class ProjectConfig {
-
-    @Bean
-    Parrot parrot() {
-        var p = new Parrot();
-        p.setName("Koko");
-
-        return p;
-    }
-
-    @Bean
-    Pirate pirate() {
-        var p = new Pirate();
-        p.setName("Joe");
-
-        return p;
-    }
 
 }

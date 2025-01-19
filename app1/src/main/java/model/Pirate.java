@@ -1,7 +1,14 @@
 package model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pirate {
-    private String name;
+    private String name = "Ella";
+
+    // NOTE: такой способ часто использует в модульных тестах
+    @Autowired
     private Parrot parrot;
 
     public String getName() {
