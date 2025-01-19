@@ -6,10 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Pirate {
     private String name = "Ella";
+    private final Parrot parrot;
 
-    // NOTE: такой способ часто использует в модульных тестах
+    // NOTE: наиболее распространенный способ
+    // позволяет объявлять поля как final
     @Autowired
-    private Parrot parrot;
+    public Pirate(Parrot parrot) {
+        this.parrot = parrot;
+    }
 
     public String getName() {
         return name;
@@ -23,9 +27,9 @@ public class Pirate {
         this.name = name;
     }
 
-    public void setParrot(Parrot parrot) {
-        this.parrot = parrot;
-    }
+//    public void setParrot(Parrot parrot) {
+//        this.parrot = parrot;
+//    }
 
     @Override
     public String toString() {
