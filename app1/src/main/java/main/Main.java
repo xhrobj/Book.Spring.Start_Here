@@ -1,15 +1,20 @@
 package main;
 
 import model.Parrot;
+import model.Pirate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(); // Создание экземпляра контекста Spring
 
-        Parrot parrot = new Parrot();
-        parrot.setName("Jameson");
+        var parrot = new Parrot();
+        parrot.setName("Koko");
 
-        System.out.println("Hello " + parrot.getName());
+        var pirate = new Pirate();
+        pirate.setName("Joe");
+        pirate.setParrot(parrot);
+
+        System.out.println(pirate);
     }
 }
