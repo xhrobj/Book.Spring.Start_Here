@@ -9,13 +9,10 @@ public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        var parrot = new Parrot();
-        parrot.setName("Koko");
+        Parrot parrot = context.getBean(Parrot.class);
+        System.out.println(parrot);
 
-        var pirate = new Pirate();
-        pirate.setName("Joe");
-        pirate.setParrot(parrot);
-
+        Pirate pirate = context.getBean(Pirate.class);
         System.out.println(pirate);
     }
 }
