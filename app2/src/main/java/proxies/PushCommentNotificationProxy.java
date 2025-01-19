@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("email")
-public class EmailCommentNotificationProxy implements CommentNotificationProxy {
+@Qualifier("push")
+public class PushCommentNotificationProxy implements CommentNotificationProxy {
 
     @Override
     public void sendComment(Comment comment) {
-        System.out.println("Отправка email для комментария: " +  comment.getText());
+        System.out.println("Отправка push для комментария: " + comment.getText());
     }
 }
