@@ -6,15 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Pirate {
     private String name = "Ella";
-    private final Parrot parrot;
-
-    // NOTE: наиболее распространенный способ
-    // позволяет объявлять поля как final
-    // NOTE: начиная с версии Spring 4.3, если класс состоит только из одного конструктора, аннотацию @Autowired можно пропустить
-//    @Autowired
-    public Pirate(Parrot parrot) {
-        this.parrot = parrot;
-    }
+    private Parrot parrot;
 
     public String getName() {
         return name;
@@ -28,9 +20,12 @@ public class Pirate {
         this.name = name;
     }
 
-//    public void setParrot(Parrot parrot) {
-//        this.parrot = parrot;
-//    }
+    // Очень редко используемый способ
+    // NOTE: какая-то магия! Сеттер явно нигде не вызывается, но свойство устанавливается
+    @Autowired
+    public void setParrot(Parrot parrot) {
+        this.parrot = parrot;
+    }
 
     @Override
     public String toString() {
