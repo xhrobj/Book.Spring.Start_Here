@@ -17,9 +17,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    Pirate pirate() {
+    Pirate pirate(Parrot friend) {
         var p = new Pirate();
         p.setName("Joe");
+        p.setParrot(friend); // Spring внедряет (DI - dependency injection) бин parrot в этот параметр
 
         return p;
     }
