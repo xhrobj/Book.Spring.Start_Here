@@ -4,6 +4,10 @@ public class Pirate {
     private String name;
     private Parrot parrot;
 
+    public Pirate() {
+        System.out.println("-> Pirate created");
+    }
+
     public String getName() {
         return name;
     }

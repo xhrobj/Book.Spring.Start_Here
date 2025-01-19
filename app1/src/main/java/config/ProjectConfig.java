@@ -20,6 +20,7 @@ public class ProjectConfig {
     Pirate pirate() {
         var p = new Pirate();
         p.setName("Joe");
+        p.setParrot(parrot()); // создание ссылки из бина pirate на бин parrot
 
         return p;
     }
