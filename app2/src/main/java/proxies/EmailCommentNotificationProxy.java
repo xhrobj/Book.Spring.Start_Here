@@ -4,12 +4,16 @@ import model.Comment;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.logging.Logger;
+
 @Component
 @Qualifier("email")
-public class EmailCommentNotificationProxy implements CommentNotificationProxy {
+public final class EmailCommentNotificationProxy implements CommentNotificationProxy {
+
+    private final Logger logger = Logger.getLogger(EmailCommentNotificationProxy.class.getName());
 
     @Override
     public void sendComment(Comment comment) {
-        System.out.println("Отправка email для комментария: " +  comment.getText());
+        logger.info("+ Отправка email для комментария: " +  comment.getText());
     }
 }

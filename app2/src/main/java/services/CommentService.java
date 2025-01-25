@@ -22,9 +22,12 @@ public class CommentService {
         this.commentNotificationProxy = commentNotificationProxy;
     }
 
-    public void publishComment(Comment comment) {
+    public String publishComment(Comment comment) {
         logger.info("--> Publishing comment: " + comment.getText());
+
         commentRepository.storeComment(comment);
         commentNotificationProxy.sendComment(comment);
+
+        return "SUCCESS";
     }
 }
