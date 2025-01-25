@@ -1,5 +1,6 @@
 package services;
 
+import annotations.ToLog;
 import model.Comment;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class CommentService {
         this.commentNotificationProxy = commentNotificationProxy;
     }
 
+    @ToLog
     public String publishComment(Comment comment) {
         logger.info("--> Publishing comment: " + comment.getText());
 
