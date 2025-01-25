@@ -2,6 +2,7 @@ package aspects;
 
 import model.Comment;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
@@ -35,5 +36,10 @@ public class LoggingAspect {
         returnedByMethod = "FAILED";
 
         return returnedByMethod;
+    }
+
+    @AfterReturning(value = "@annotation(annotations.ToLog)", returning = "returnedValue")
+    public void logAnother(Object returnedValue) {
+        logger.info("***888 Method executed and returned " + returnedValue);
     }
 }
